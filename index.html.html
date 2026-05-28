@@ -1,322 +1,340 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta property="og:title" content="Ortodoncia sin dolor · Anabel Sánchez" />
-<meta property="og:description" content="Tratamientos personalizados de ortodoncia en San Francisco, Córdoba." />
-<meta property="og:image" content="https://ortodonciapremium.vercel.app/preview.jpg" />
-<meta property="og:url" content="https://ortodonciapremium.vercel.app/" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<title>Ortodoncia sin dolor · Anabel Sánchez</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --mint:    #C2E1DE;
-    --sage:    #9DB4B1;
-    --steel:   #B8C3C4;
-    --dark:    #303030;
-    --black:   #191919;
-    --white:   #FAFAF8;
-    --accent:  #7AAFA9;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--white);
-    color: var(--dark);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.65;
-  }
-
-  /* ── HERO COPY ── */
-  .hero {
-    background: var(--black);
-    color: var(--white);
-    padding: 90px 24px 80px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 50% 0%, #7AAFA930 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-tag {
-    display: inline-block;
-    font-size: .72rem;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--mint);
-    border: 1px solid var(--accent);
-    border-radius: 100px;
-    padding: 5px 18px;
-    margin-bottom: 28px;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 6vw, 4rem);
-    font-weight: 700;
-    line-height: 1.15;
-    max-width: 720px;
-    margin: 0 auto 24px;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--mint);
-  }
-  .hero p.sub {
-    font-size: 1.05rem;
-    max-width: 560px;
-    margin: 0 auto;
-    color: var(--steel);
-  }
-
-  /* ── INTRO STATEMENT ── */
-  .intro {
-    padding: 72px 24px;
-    max-width: 760px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .intro p {
-    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
-    color: var(--dark);
-    line-height: 1.7;
-  }
-  .intro strong {
-    font-weight: 500;
-    color: var(--black);
-  }
-
-  /* ── TRATAMIENTOS GRID ── */
-  .treatments {
-    background: var(--black);
-    padding: 80px 24px;
-  }
-  .treatments-inner {
-    max-width: 1080px;
-    margin: 0 auto;
-  }
-  .section-label {
-    font-size: .72rem;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 14px;
-    display: block;
-  }
-  .treatments h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    color: var(--white);
-    max-width: 560px;
-    line-height: 1.2;
-    margin-bottom: 56px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-  }
-  .card {
-    background: #232323;
-    border: 1px solid #333;
-    border-radius: 16px;
-    padding: 32px 28px 28px;
-    position: relative;
-    transition: border-color .3s, transform .3s;
-  }
-  .card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-  }
-  .card.star {
-    background: linear-gradient(135deg, #1a3330 0%, #232323 60%);
-    border-color: var(--accent);
-  }
-  .star-badge {
-    position: absolute;
-    top: -12px;
-    right: 20px;
-    background: var(--mint);
-    color: var(--black);
-    font-size: .65rem;
-    font-weight: 500;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    border-radius: 100px;
-    padding: 4px 14px;
-  }
-  .card-icon {
-    font-size: 1.8rem;
-    margin-bottom: 16px;
-  }
-  .card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: var(--white);
-    margin-bottom: 10px;
-    font-weight: 400;
-  }
-  .card p {
-    font-size: .9rem;
-    color: var(--steel);
-    line-height: 1.6;
-  }
-  .card .benefit {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 14px;
-    font-size: .8rem;
-    color: var(--mint);
-  }
-
-  /* ── OBJECTION BUSTERS ── */
-  .objections {
-    padding: 80px 24px;
-    max-width: 860px;
-    margin: 0 auto;
-  }
-  .objections h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    color: var(--black);
-    text-align: center;
-    margin-bottom: 52px;
-    line-height: 1.25;
-  }
-  .faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .faq-item {
-    border: 1px solid #dde5e4;
-    border-radius: 14px;
-    overflow: hidden;
-  }
-  .faq-q {
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 22px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--black);
-    cursor: pointer;
-    text-align: left;
-    gap: 16px;
-  }
-  .faq-q .ico {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--mint);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    transition: transform .3s;
-  }
-  .faq-item.open .ico { transform: rotate(45deg); }
-  .faq-a {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .4s ease, padding .3s;
-  }
-  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 22px; }
-  .faq-a-inner {
-    padding: 0 24px;
-    font-size: .95rem;
-    color: #555;
-    line-height: 1.7;
-  }
-
-  /* ── CTA ── */
-  .cta-block {
-    background: linear-gradient(135deg, var(--mint) 0%, #a8d1ce 100%);
-    padding: 80px 24px;
-    text-align: center;
-  }
-  .cta-block h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    color: var(--black);
-    max-width: 600px;
-    margin: 0 auto 16px;
-    line-height: 1.2;
-  }
-  .cta-block p {
-    color: #2a4a47;
-    max-width: 480px;
-    margin: 0 auto 36px;
-    font-size: 1rem;
-  }
-  .btn {
-    display: inline-block;
-    background: var(--black);
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: .04em;
-    padding: 18px 44px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: background .3s, transform .2s;
-  }
-  .btn:hover { background: #333; transform: translateY(-2px); }
-  .cta-note {
-    display: block;
-    margin-top: 20px;
-    font-size: .82rem;
-    color: #3a5a57;
-  }
-
-  /* ── FIRMA ── */
-  .firma {
-    text-align: center;
-    padding: 40px 24px 60px;
-  }
-  .firma p {
-    font-size: .82rem;
-    color: var(--sage);
-    letter-spacing: .05em;
-  }
-
-  /* animations */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero > * { animation: fadeUp .7s ease both; }
-  .hero > *:nth-child(2) { animation-delay: .12s; }
-  .hero > *:nth-child(3) { animation-delay: .24s; }
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   
-</style>
+  <meta property="og:title" content="Ortodoncia sin dolor · Anabel Sánchez" />
+  <meta property="og:description" content="Tratamientos personalizados de ortodoncia en San Francisco, Córdoba." />
+  <meta property="og:image" content="https://ortodonciapremium.vercel.app/preview.jpg" />
+  <meta property="og:url" content="https://ortodonciapremium.vercel.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <title>Ortodoncia sin dolor · Anabel Sánchez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  
+  <style>
+    :root {
+      --mint:    #C2E1DE;
+      --sage:    #9DB4B1;
+      --steel:   #B8C3C4;
+      --dark:    #303030;
+      --black:   #191919;
+      --white:   #FAFAF8;
+      --accent:  #7AAFA9;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.65;
+      font-size: 16px; /* Tamaño base legible */
+      overflow-x: hidden;
+    }
+
+    /* ── HERO COPY ── */
+    .hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 80px 20px 60px; /* Ajustado para celular */
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, #7AAFA930 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--mint);
+      border: 1px solid var(--accent);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      /* En cel arranca en 2.2rem, crece en tablet/PC a 4rem */
+      font-size: clamp(2.2rem, 8vw, 4rem); 
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--mint);
+    }
+    .hero p.sub {
+      font-size: clamp(1.05rem, 3vw, 1.15rem);
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--steel);
+    }
+
+    /* ── INTRO STATEMENT ── */
+    .intro {
+      padding: 60px 20px;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .intro p {
+      font-size: clamp(1.2rem, 4vw, 1.4rem);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .intro strong {
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    /* ── TRATAMIENTOS GRID ── */
+    .treatments {
+      background: var(--black);
+      padding: 70px 20px;
+    }
+    .treatments-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: .75rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .treatments h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      color: var(--white);
+      max-width: 560px;
+      line-height: 1.2;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      /* En cel ocupa 100%, en PC se divide */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 24px;
+    }
+    .card {
+      background: #232323;
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 32px 24px;
+      position: relative;
+      transition: border-color .3s, transform .3s;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+    .card.star {
+      background: linear-gradient(135deg, #1a3330 0%, #232323 60%);
+      border-color: var(--accent);
+      margin-top: 15px; /* Da espacio para el badge en celular */
+    }
+    .star-badge {
+      position: absolute;
+      top: -14px;
+      left: 24px; /* Movido a la izquierda para mejor lectura en cel */
+      background: var(--mint);
+      color: var(--black);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-radius: 100px;
+      padding: 6px 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: var(--steel);
+      line-height: 1.6;
+    }
+    .card .benefit {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--mint);
+    }
+
+    /* ── OBJECTION BUSTERS ── */
+    .objections {
+      padding: 70px 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .objections h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 2.4rem);
+      color: var(--black);
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.25;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      border: 1px solid #dde5e4;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem; /* Letra más grande para tocar fácil */
+      font-weight: 500;
+      color: var(--black);
+      cursor: pointer;
+      text-align: left;
+      gap: 16px;
+    }
+    .faq-q .ico {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--mint);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: transform .3s;
+    }
+    .faq-item.open .ico { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease, padding .3s;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+    .faq-a-inner {
+      padding: 0 20px;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .cta-block {
+      background: linear-gradient(135deg, var(--mint) 0%, #a8d1ce 100%);
+      padding: 70px 20px;
+      text-align: center;
+    }
+    .cta-block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      color: var(--black);
+      max-width: 600px;
+      margin: 0 auto 16px;
+      line-height: 1.2;
+    }
+    .cta-block p {
+      color: #2a4a47;
+      max-width: 480px;
+      margin: 0 auto 30px;
+      font-size: 1.05rem;
+    }
+    .btn {
+      display: block; /* Convertido en bloque para celulares */
+      width: 100%;
+      max-width: 340px; /* No será excesivamente largo en PC */
+      margin: 0 auto;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem; /* Texto de botón más grande */
+      font-weight: 500;
+      letter-spacing: .02em;
+      padding: 18px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background .3s, transform .2s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .btn:hover { background: #333; transform: translateY(-2px); }
+
+    /* ── FIRMA ── */
+    .firma {
+      text-align: center;
+      padding: 40px 20px 60px;
+    }
+    .firma p {
+      font-size: .85rem;
+      color: var(--sage);
+      letter-spacing: .05em;
+    }
+
+    /* MEDIA QUERIES PARA PANTALLAS GRANDES */
+    @media (min-width: 768px) {
+      .hero { padding: 100px 40px 90px; }
+      .intro { padding: 90px 40px; }
+      .treatments { padding: 100px 40px; }
+      .objections { padding: 100px 40px; }
+      .cta-block { padding: 90px 40px; }
+      .btn { display: inline-block; width: auto; padding: 18px 44px; }
+      .star-badge { right: 20px; left: auto; } /* Vuelve a la derecha en PC */
+    }
+
+    /* animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero > * { animation: fadeUp .7s ease both; }
+    .hero > *:nth-child(2) { animation-delay: .12s; }
+    .hero > *:nth-child(3) { animation-delay: .24s; }
+
+  </style>
 </head>
 <body>
 
-<!-- ① HERO -->
 <section class="hero">
   <span class="hero-tag">Ortodoncia · San Francisco, Córdoba</span>
   <h1>Querés sonreír sin vergüenza<br>y sin <em>dolor</em>. Podemos ayudarte.</h1>
   <p class="sub">Existe un tratamiento diseñado para tu caso, tu vida y tu presupuesto. Descubrilo abajo.</p>
 </section>
 
-<!-- ② INTRO -->
 <section class="intro">
   <p>
     En el consultorio de <strong>Od. Anabel Sánchez Chazarreta</strong> no usamos un solo tipo de ortodoncia
@@ -327,7 +345,6 @@
   </p>
 </section>
 
-<!-- ③ TRATAMIENTOS -->
 <section class="treatments">
   <div class="treatments-inner">
     <span class="section-label">Nuestros tratamientos</span>
@@ -367,7 +384,6 @@
   </div>
 </section>
 
-<!-- ④ OBJECIONES -->
 <section class="objections">
   <h2>Lo que probablemente<br>te estás preguntando</h2>
   <div class="faq-list">
@@ -447,7 +463,6 @@
   </div>
 </section>
 
-<!-- ⑤ CTA -->
 <section class="cta-block">
   <h2>Tu boca se merece una consulta sin compromiso</h2>
   <p>Primera consulta con Anabel. Evaluación personalizada, diagnóstico claro y opciones reales para tu caso.</p>
@@ -456,7 +471,6 @@
   </a>
 </section>
 
-<!-- FIRMA -->
 <div class="firma">
   <p>Od. Anabel Sánchez Chazarreta · MP. 8636</p>
 </div>
