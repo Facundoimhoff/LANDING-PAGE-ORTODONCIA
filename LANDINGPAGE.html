@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ortodoncia sin dolor · Anabel Sánchez</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --mint:    #C2E1DE;
+    --sage:    #9DB4B1;
+    --steel:   #B8C3C4;
+    --dark:    #303030;
+    --black:   #191919;
+    --white:   #FAFAF8;
+    --accent:  #7AAFA9;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--white);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  /* ── HERO COPY ── */
+  .hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 90px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 0%, #7AAFA930 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: .72rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--mint);
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    padding: 5px 18px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 720px;
+    margin: 0 auto 24px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--mint);
+  }
+  .hero p.sub {
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--steel);
+  }
+
+  /* ── INTRO STATEMENT ── */
+  .intro {
+    padding: 72px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .intro p {
+    font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+    color: var(--dark);
+    line-height: 1.7;
+  }
+  .intro strong {
+    font-weight: 500;
+    color: var(--black);
+  }
+
+  /* ── TRATAMIENTOS GRID ── */
+  .treatments {
+    background: var(--black);
+    padding: 80px 24px;
+  }
+  .treatments-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: .72rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .treatments h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--white);
+    max-width: 560px;
+    line-height: 1.2;
+    margin-bottom: 56px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: #232323;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 32px 28px 28px;
+    position: relative;
+    transition: border-color .3s, transform .3s;
+  }
+  .card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+  .card.star {
+    background: linear-gradient(135deg, #1a3330 0%, #232323 60%);
+    border-color: var(--accent);
+  }
+  .star-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--mint);
+    color: var(--black);
+    font-size: .65rem;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    border-radius: 100px;
+    padding: 4px 14px;
+  }
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  .card p {
+    font-size: .9rem;
+    color: var(--steel);
+    line-height: 1.6;
+  }
+  .card .benefit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: .8rem;
+    color: var(--mint);
+  }
+
+  /* ── OBJECTION BUSTERS ── */
+  .objections {
+    padding: 80px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .objections h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 52px;
+    line-height: 1.25;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .faq-item {
+    border: 1px solid #dde5e4;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--black);
+    cursor: pointer;
+    text-align: left;
+    gap: 16px;
+  }
+  .faq-q .ico {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: transform .3s;
+  }
+  .faq-item.open .ico { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease, padding .3s;
+  }
+  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 22px; }
+  .faq-a-inner {
+    padding: 0 24px;
+    font-size: .95rem;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* ── CTA ── */
+  .cta-block {
+    background: linear-gradient(135deg, var(--mint) 0%, #a8d1ce 100%);
+    padding: 80px 24px;
+    text-align: center;
+  }
+  .cta-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--black);
+    max-width: 600px;
+    margin: 0 auto 16px;
+    line-height: 1.2;
+  }
+  .cta-block p {
+    color: #2a4a47;
+    max-width: 480px;
+    margin: 0 auto 36px;
+    font-size: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .04em;
+    padding: 18px 44px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background .3s, transform .2s;
+  }
+  .btn:hover { background: #333; transform: translateY(-2px); }
+  .cta-note {
+    display: block;
+    margin-top: 20px;
+    font-size: .82rem;
+    color: #3a5a57;
+  }
+
+  /* ── FIRMA ── */
+  .firma {
+    text-align: center;
+    padding: 40px 24px 60px;
+  }
+  .firma p {
+    font-size: .82rem;
+    color: var(--sage);
+    letter-spacing: .05em;
+  }
+
+  /* animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp .7s ease both; }
+  .hero > *:nth-child(2) { animation-delay: .12s; }
+  .hero > *:nth-child(3) { animation-delay: .24s; }
+</style>
+</head>
+<body>
+
+<!-- ① HERO -->
+<section class="hero">
+  <span class="hero-tag">Ortodoncia · San Francisco, Córdoba</span>
+  <h1>Querés sonreír sin vergüenza<br>y sin <em>dolor</em>. Podemos ayudarte.</h1>
+  <p class="sub">Existe un tratamiento diseñado para tu caso, tu vida y tu presupuesto. Descubrilo abajo.</p>
+</section>
+
+<!-- ② INTRO -->
+<section class="intro">
+  <p>
+    En el consultorio de <strong>Od. Anabel Sánchez Chazarreta</strong> no usamos un solo tipo de ortodoncia
+    porque <strong>no existe un solo tipo de persona.</strong><br><br>
+    Evaluamos tu caso, tu rutina y lo que querés lograr,
+    y juntos elegimos el camino que mejor se adapta a vos.
+    Sin presiones. Sin letra chica.
+  </p>
+</section>
+
+<!-- ③ TRATAMIENTOS -->
+<section class="treatments">
+  <div class="treatments-inner">
+    <span class="section-label">Nuestros tratamientos</span>
+    <h2>Todos los caminos llevan a tu mejor sonrisa</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-icon">🦷</div>
+        <h3>Brackets metálicos</h3>
+        <p>La opción con mayor precisión clínica y el mejor costo-beneficio del mercado. Ideales para correcciones complejas.</p>
+        <span class="benefit">✓ Alta eficacia · precio accesible</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">✨</div>
+        <h3>Brackets estéticos</h3>
+        <p>Cerámica o zafiro que se mimetiza con el color de tus dientes. Eficacia idéntica a los metálicos, presencia mínima.</p>
+        <span class="benefit">✓ Discretos y efectivos</span>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3>Brackets de autoligado</h3>
+        <p>Menos fricción, menos visitas al consultorio. Controles más espaciados sin comprometer los resultados.</p>
+        <span class="benefit">✓ Menos tiempo perdido</span>
+      </div>
+
+      <div class="card star">
+        <span class="star-badge">⭐ Estrella del consultorio</span>
+        <div class="card-icon">🫥</div>
+        <h3>Ortodoncia invisible</h3>
+        <p>Alineadores transparentes removibles. Nadie sabe que estás en tratamiento. No es para todos los casos, por eso Anabel hace una evaluación personalizada para saber si es la opción ideal para vos.</p>
+        <span class="benefit">✓ Sin brackets · sin alambres</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ④ OBJECIONES -->
+<section class="objections">
+  <h2>Lo que probablemente<br>te estás preguntando</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span>¿Va a doler? Escuché que la ortodoncia duele mucho.</span>
+        <span class="ico">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Es normal sentir algo de presión los primeros días después de cada ajuste, pero dolor intenso no tiene por qué ser parte del proceso. En este consultorio trabajamos con tecnología láser complementaria y técnicas de bajo impacto para que tu experiencia sea lo más cómoda posible. La gran mayoría de los pacientes se sorprende de lo llevadero que es.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span>No sé si mis dientes tienen solución. Están muy desalineados.</span>
+        <span class="ico">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Cuántas veces escuchamos eso… y cuántas veces demostramos lo contrario. La primera consulta existe justamente para evaluar tu caso sin compromiso. Anabel te dirá con honestidad qué se puede lograr, en cuánto tiempo y con qué tratamiento. Nada más.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span>¿Los brackets me van a afectar en el trabajo o en mi vida social?</span>
+        <span class="ico">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Dependiendo del tratamiento que elijas, el impacto puede ser mínimo o directamente invisible. Los brackets estéticos pasan desapercibidos y la ortodoncia invisible no se nota en conversación ni en fotos. El objetivo es que puedas seguir tu vida normal mientras tu sonrisa avanza.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span>¿Cuánto tiempo voy a estar en tratamiento?</span>
+        <span class="ico">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Depende de cada caso, pero en la primera consulta Anabel te dará un rango estimado real — no uno genérico. La honestidad en los tiempos es parte del compromiso de este consultorio con vos.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span>¿Soy candidato/a para la ortodoncia invisible?</span>
+        <span class="ico">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          La ortodoncia invisible es fantástica, pero no es para todos los casos — y eso es algo que no todos los profesionales te dicen. Anabel evalúa personalmente si tus dientes, tu mordida y tu caso clínico son compatibles con este tratamiento. Si no lo son, te explica por qué y qué alternativa te da el mismo resultado.
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        <span>¿Y si empiezo y no puedo seguir pagando?</span>
+        <span class="ico">+</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          Eso lo hablamos antes de arrancar. En la consulta inicial se presentan las opciones de pago y plan para que no haya sorpresas. El objetivo es que puedas terminar tu tratamiento tranquilo/a, no que lo empieces con incertidumbre.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ⑤ CTA -->
+<section class="cta-block">
+  <h2>Tu boca se merece una consulta sin compromiso</h2>
+  <p>Primera consulta con Anabel. Evaluación personalizada, diagnóstico claro y opciones reales para tu caso.</p>
+  <a class="btn" href="https://wa.me/+5493564616171?text=Hola%20Anabel%2C%20quiero%20sacar%20turno%20para%20una%20consulta%20de%20ortodoncia" target="_blank">
+    Quiero mi turno →
+  </a>
+  <span class="cta-note">Sin costo de consulta inicial · San Francisco, Córdoba</span>
+</section>
+
+<!-- FIRMA -->
+<div class="firma">
+  <p>Od. Anabel Sánchez Chazarreta · MP. 8636 · Ortodoncista</p>
+</div>
+
+<script>
+  function toggle(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
