@@ -357,6 +357,62 @@
     padding: 18px 20px;
   }
 }
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  max-width: 100vw;
+}
+
+.hero,
+.intro,
+.treatments,
+.objections,
+.cta-block,
+.firma {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 60px 18px 50px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    line-height: 1.1;
+  }
+
+  .hero p.sub {
+    font-size: 1rem;
+  }
+
+  .intro,
+  .objections,
+  .cta-block,
+  .treatments {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .faq-q {
+    font-size: 0.95rem;
+  }
+}
 </style>
 </head>
 <body>
