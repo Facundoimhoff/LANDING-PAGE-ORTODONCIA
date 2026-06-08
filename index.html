@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  
-  <meta property="og:title" content="Ortodoncia sin dolor · Anabel Sánchez" />
-  <meta property="og:description" content="Tratamientos personalizados de ortodoncia en San Francisco, Córdoba." />
-  <meta property="og:image" content="https://ortodonciapremium.vercel.app/preview.jpg" />
-  <meta property="og:url" content="https://ortodonciapremium.vercel.app/" />
+
+  <title>Od. Anabel Sánchez Chazarreta | Ortodoncia y Láser</title>
+  <meta name="description" content="Sitio oficial de la Od. Anabel Sánchez Chazarreta. Ortodoncia personalizada, ortodoncia invisible y terapias láser en San Francisco, Córdoba." />
+  <link rel="canonical" href="https://paginawebdoc.vercel.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Od. Anabel Sánchez Chazarreta" />
+  <meta property="og:title" content="Od. Anabel Sánchez Chazarreta | Ortodoncia y Láser" />
+  <meta property="og:description" content="Ortodoncia personalizada, ortodoncia invisible y terapias láser en San Francisco, Córdoba." />
+  <meta property="og:url" content="https://paginawebdoc.vercel.app/" />
+  <meta property="og:image" content="https://paginawebdoc.vercel.app/preview.jpg" />
+  <meta property="og:image:secure_url" content="https://paginawebdoc.vercel.app/preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
   <meta name="twitter:card" content="summary_large_image" />
-  
-  <title>Ortodoncia sin dolor · Anabel Sánchez</title>
+  <meta name="twitter:title" content="Od. Anabel Sánchez Chazarreta | Ortodoncia y Láser" />
+  <meta name="twitter:description" content="Ortodoncia personalizada, ortodoncia invisible y terapias láser en San Francisco, Córdoba." />
+  <meta name="twitter:image" content="https://paginawebdoc.vercel.app/preview.jpg" />
+
+  <meta name="theme-color" content="#191919" />
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  
+
   <style>
     :root {
       --mint:    #C2E1DE;
@@ -32,19 +46,19 @@
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       line-height: 1.65;
-      font-size: 16px; /* Tamaño base legible */
+      font-size: 16px;
       overflow-x: hidden;
     }
 
-    /* ── HERO COPY ── */
     .hero {
       background: var(--black);
       color: var(--white);
-      padding: 80px 20px 60px; /* Ajustado para celular */
+      padding: 80px 20px 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
+
     .hero::before {
       content: '';
       position: absolute;
@@ -52,6 +66,7 @@
       background: radial-gradient(ellipse 70% 60% at 50% 0%, #7AAFA930 0%, transparent 70%);
       pointer-events: none;
     }
+
     .hero-tag {
       display: inline-block;
       font-size: 0.75rem;
@@ -63,19 +78,21 @@
       padding: 6px 16px;
       margin-bottom: 24px;
     }
+
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      /* En cel arranca en 2.2rem, crece en tablet/PC a 4rem */
-      font-size: clamp(2.2rem, 8vw, 4rem); 
+      font-size: clamp(2.2rem, 8vw, 4rem);
       font-weight: 700;
       line-height: 1.15;
       max-width: 720px;
       margin: 0 auto 20px;
     }
+
     .hero h1 em {
       font-style: italic;
       color: var(--mint);
     }
+
     .hero p.sub {
       font-size: clamp(1.05rem, 3vw, 1.15rem);
       max-width: 560px;
@@ -83,32 +100,34 @@
       color: var(--steel);
     }
 
-    /* ── INTRO STATEMENT ── */
     .intro {
       padding: 60px 20px;
       max-width: 760px;
       margin: 0 auto;
       text-align: center;
     }
+
     .intro p {
       font-size: clamp(1.2rem, 4vw, 1.4rem);
       color: var(--dark);
       line-height: 1.6;
     }
+
     .intro strong {
       font-weight: 500;
       color: var(--black);
     }
 
-    /* ── TRATAMIENTOS GRID ── */
     .treatments {
       background: var(--black);
       padding: 70px 20px;
     }
+
     .treatments-inner {
       max-width: 1080px;
       margin: 0 auto;
     }
+
     .section-label {
       font-size: .75rem;
       letter-spacing: .18em;
@@ -117,6 +136,7 @@
       margin-bottom: 12px;
       display: block;
     }
+
     .treatments h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 6vw, 2.8rem);
@@ -125,12 +145,13 @@
       line-height: 1.2;
       margin-bottom: 40px;
     }
+
     .grid {
       display: grid;
-      /* En cel ocupa 100%, en PC se divide */
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
+
     .card {
       background: #232323;
       border: 1px solid #333;
@@ -139,19 +160,22 @@
       position: relative;
       transition: border-color .3s, transform .3s;
     }
+
     .card:hover {
       border-color: var(--accent);
       transform: translateY(-4px);
     }
+
     .card.star {
       background: linear-gradient(135deg, #1a3330 0%, #232323 60%);
       border-color: var(--accent);
-      margin-top: 15px; /* Da espacio para el badge en celular */
+      margin-top: 15px;
     }
+
     .star-badge {
       position: absolute;
       top: -14px;
-      left: 24px; /* Movido a la izquierda para mejor lectura en cel */
+      left: 24px;
       background: var(--mint);
       color: var(--black);
       font-size: .7rem;
@@ -162,10 +186,12 @@
       padding: 6px 14px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
+
     .card-icon {
       font-size: 2rem;
       margin-bottom: 12px;
     }
+
     .card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.35rem;
@@ -173,11 +199,13 @@
       margin-bottom: 10px;
       font-weight: 400;
     }
+
     .card p {
       font-size: 0.95rem;
       color: var(--steel);
       line-height: 1.6;
     }
+
     .card .benefit {
       display: inline-flex;
       align-items: center;
@@ -188,12 +216,12 @@
       color: var(--mint);
     }
 
-    /* ── OBJECTION BUSTERS ── */
     .objections {
       padding: 70px 20px;
       max-width: 860px;
       margin: 0 auto;
     }
+
     .objections h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 6vw, 2.4rem);
@@ -202,17 +230,20 @@
       margin-bottom: 40px;
       line-height: 1.25;
     }
+
     .faq-list {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
+
     .faq-item {
       border: 1px solid #dde5e4;
       border-radius: 14px;
       overflow: hidden;
       background: var(--white);
     }
+
     .faq-q {
       width: 100%;
       background: none;
@@ -222,13 +253,14 @@
       justify-content: space-between;
       align-items: center;
       font-family: 'DM Sans', sans-serif;
-      font-size: 1.05rem; /* Letra más grande para tocar fácil */
+      font-size: 1.05rem;
       font-weight: 500;
       color: var(--black);
       cursor: pointer;
       text-align: left;
       gap: 16px;
     }
+
     .faq-q .ico {
       flex-shrink: 0;
       width: 32px;
@@ -241,13 +273,17 @@
       font-size: 1.2rem;
       transition: transform .3s;
     }
+
     .faq-item.open .ico { transform: rotate(45deg); }
+
     .faq-a {
       max-height: 0;
       overflow: hidden;
       transition: max-height .4s ease, padding .3s;
     }
+
     .faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+
     .faq-a-inner {
       padding: 0 20px;
       font-size: 1rem;
@@ -255,12 +291,12 @@
       line-height: 1.6;
     }
 
-    /* ── CTA ── */
     .cta-block {
       background: linear-gradient(135deg, var(--mint) 0%, #a8d1ce 100%);
       padding: 70px 20px;
       text-align: center;
     }
+
     .cta-block h2 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 6vw, 2.8rem);
@@ -269,21 +305,23 @@
       margin: 0 auto 16px;
       line-height: 1.2;
     }
+
     .cta-block p {
       color: #2a4a47;
       max-width: 480px;
       margin: 0 auto 30px;
       font-size: 1.05rem;
     }
+
     .btn {
-      display: block; /* Convertido en bloque para celulares */
+      display: block;
       width: 100%;
-      max-width: 340px; /* No será excesivamente largo en PC */
+      max-width: 340px;
       margin: 0 auto;
       background: var(--black);
       color: var(--white);
       font-family: 'DM Sans', sans-serif;
-      font-size: 1.1rem; /* Texto de botón más grande */
+      font-size: 1.1rem;
       font-weight: 500;
       letter-spacing: .02em;
       padding: 18px 24px;
@@ -292,20 +330,23 @@
       transition: background .3s, transform .2s;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-    .btn:hover { background: #333; transform: translateY(-2px); }
 
-    /* ── FIRMA ── */
+    .btn:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
     .firma {
       text-align: center;
       padding: 40px 20px 60px;
     }
+
     .firma p {
       font-size: .85rem;
       color: var(--sage);
       letter-spacing: .05em;
     }
 
-    /* MEDIA QUERIES PARA PANTALLAS GRANDES */
     @media (min-width: 768px) {
       .hero { padding: 100px 40px 90px; }
       .intro { padding: 90px 40px; }
@@ -313,18 +354,17 @@
       .objections { padding: 100px 40px; }
       .cta-block { padding: 90px 40px; }
       .btn { display: inline-block; width: auto; padding: 18px 44px; }
-      .star-badge { right: 20px; left: auto; } /* Vuelve a la derecha en PC */
+      .star-badge { right: 20px; left: auto; }
     }
 
-    /* animations */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
     .hero > * { animation: fadeUp .7s ease both; }
     .hero > *:nth-child(2) { animation-delay: .12s; }
     .hero > *:nth-child(3) { animation-delay: .24s; }
-
   </style>
 </head>
 <body>
@@ -466,7 +506,7 @@
 <section class="cta-block">
   <h2>Tu boca se merece una consulta sin compromiso</h2>
   <p>Primera consulta con Anabel. Evaluación personalizada, diagnóstico claro y opciones reales para tu caso.</p>
-  <a class="btn" href="https://wa.me/+5493564616171?text=Hola%20Anabel%2C%20quiero%20sacar%20turno%20para%20una%20consulta%20de%20ortodoncia" target="_blank">
+  <a class="btn" href="https://wa.me/+5493564616171?text=Hola%20Anabel%2C%20quiero%20sacar%20turno%20para%20una%20consulta%20de%20ortodoncia" target="_blank" rel="noreferrer">
     Quiero mi turno →
   </a>
 </section>
